@@ -2,7 +2,7 @@ import boto3
 
 def lambda_handler (event, context):
     s3_user=boto3.client('s3')
-    file=s3_user.list_objects (Bucket='dany-cse')['Contents'][0]['Key']
+    file=s3_user.list_objects (Bucket='')['Contents'][0]['Key']
     print(file) 
     sns_user=boto3.client('sns')
     response=sns_user.publish(
